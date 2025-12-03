@@ -27,7 +27,7 @@ EXTS = [".jpg", ".jpeg", ".png"]
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ======================
-# FUNÇÃO AUXILIARES
+# FUNÇÕES AUXILIARES
 # ======================
 def list_images(folder: Path):
     files = [p for p in folder.rglob("*") if p.suffix.lower() in EXTS]
@@ -78,7 +78,7 @@ def plot():
     print("Arquivos salvos em:", OUTPUT_DIR)
     
 # ======================
-# FUNÇAO DE PRE-PROCESSAMENTO
+# FUNÇÃO DE PRE-PROCESSAMENTO
 # ======================
 def preprocess_v2(img: np.ndarray, target_size=TARGET_SIZE):
     img = cv2.fastNlMeansDenoisingColored(img, None, h=DENOISE_H, templateWindowSize=7, searchWindowSize=21) # +denoise -detalhes da imagem
